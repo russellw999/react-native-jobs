@@ -33,20 +33,20 @@ const Nearbyjobs = () => {
        </View>    
       
        <View style={styles.cardsContainer}>
-          {isLoading ? (
-              <ActivityIndicator size="large" color={COLORS.primary}/>
-            ) : error ? (
-              <Text>Something went wrong</Text>
-            ) : (
-              data?.map((job) => (
-                <NearbyJobCard 
-                   job={job}
-                   key={`nearby-job-${job?.job}`}
-                   handleNavigate={() => router.push(`/job-details/${job.job_id}`)}
-                />
-              ))
-            )}
-       </View>
+        {isLoading ? (
+          <ActivityIndicator size='large' color={COLORS.primary} />
+        ) : error ? (
+          <Text>Something went wrong</Text>
+        ) : (
+          data?.map((job) => (
+            <NearbyJobCard
+              job={job}
+              key={`nearby-job-${job.job_id}`}
+              handleNavigate={() => router.push(`/job-details/${job.job_id}`)}
+            />
+          ))
+        )}
+      </View>
   </View>
   );
 }
